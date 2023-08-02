@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 int main()
 {
@@ -6,14 +7,23 @@ int main()
     cout<<"Enter decimal number: \n";
     cin>>number;
        int counter=0;
-       while(number>0)
-       {
+       cout<<"The binary representation of "<<number<<" is ";
+ 
         while(2*count <= number)
         { count *= 2;
           counter++;
         }
-        cout<<"counter:"<<counter+1<<" number is "<<count<<"\n";
-        number -= count;
-        count = 2;
+        
+       for(int i=counter+1;i>=0;i-- )
+        { if(pow(2,i)<=number)
+          {
+            cout<<1;
+            number -= pow(2,i);
+          }
+          else
+            {
+              cout<<0;
+            }
+
        }
 }
