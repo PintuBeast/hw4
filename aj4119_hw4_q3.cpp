@@ -15,10 +15,24 @@ int main()
         }
         
        for(int i = counter + 1;i >= 0;i-- )
-        { if(pow(2,i)<=number)
+        { int num=1,counter2=0;
+
+          while(1)
+        {
+          
+          if(counter2 == i)
+          {
+            break;
+          }
+          num *= 2;
+          counter2++;
+
+        }
+
+          if(num<=number)
           {
             cout<<1;
-            number -= pow(2,i);
+            number -= num;
           }
           else
             {
